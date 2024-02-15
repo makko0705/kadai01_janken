@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ja">
+    <meta name="viewport" content="width=device-width">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/sample.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <title>じゃんけん</title>
+</head>
+
+<body>
+<div id="wrapper">
+    <header>
+        <h1>じゃんけんで遊ぼう</h1>
+    </header>
+
+    <main>
+        <div class="pc_area area">
+            <p class="name">コンピュータ</p>
+            <p id="pc_hands" class="hand"></p>
+        </div>
+        <div id="judgment">勝負は？</div>
+        <div class="i_area area">
+            <p class="name">わたし</p>
+            <p id="my_hands" class="hand"></p>
+
+            <ul>
+                <li id="gu" data-num="1"><img src="img/janken_gu.png" alt="グー"></li>
+                <li id="choki" data-num="2"><img src="img/janken_choki.png" alt="チョキ"></li>
+                <li id="par" data-num="3"><img src="img/janken_pa.png" alt="パー"></li>
+            </ul>
+            </div>
+    </main>
+
+    <footer></footer>
+</div>
+    <script>
+   
+   $("li").on("click",function (e) {
+    //乱数 (1~3)
+        const r = Math.ceil(Math.random()*3);
+        console.log("コンピューターは" + r );
+     //クリックした要素のdataを取得
+        const i = $(this).data("num");
+        console.log("わたしは" + i);
+        const gu = '<img src="img/janken_gu.png" alt="グー">';
+        const choki = '<img src="img/janken_choki.png" alt="チョキ">';
+        const par = '<img src="img/janken_pa.png" alt="パー">';
+    //if分岐処理
+    if (r == 1){
+            $("#pc_hands").html(gu);
+        }
+        if (r == 2){
+            $("#pc_hands").html(choki);
+        }
+        if (r == 3){
+            $("#pc_hands").html(par);
+        }
+
+        if (i == 1){
+            $("#my_hands").html(gu);
+        }
+        if (i == 2){
+            $("#my_hands").html(choki);
+        }
+        if (i == 3){
+            $("#my_hands").html(par);
+        }
+
+        
+    //勝ち負けの判定
+        if (i == 1 && r == 1){          //グーのとき 
+            $("#judgment").html("あいこ");
+        }
+        else if (i == 1 && r == 2){
+            $("#judgment").html("勝ち");
+        }
+        else if (i == 1 && r == 3){
+            $("#judgment").html("負け");
+        }
+        else if (i == 2 && r == 1){  //チョキのとき 
+            $("#judgment").html("負け");
+        }
+        else if (i == 2 && r == 2){
+            $("#judgment").html("あいこ");
+        }
+        else if (i == 2 && r == 3){
+            $("#judgment").html("勝ち");
+        }
+        else if (i == 3 && r == 1){    //パーのとき
+            $("#judgment").html("勝ち");
+        }
+        else if (i == 3 && r == 2){
+            $("#judgment").html("負け");
+        }
+        else if (i == 3 && r == 3){
+            $("#judgment").html("あいこ");
+        }
+
+   });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+body{
+    margin:0;
+    padding:0;
+    text-align:left;
+    text-align: center;
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;//from 100 to 900
+    font-style: normal;
+
+}
+#wrapper {
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+}
+header {
+    text-align: left;
+    transform: rotate(270deg);
+    position: absolute;
+    opacity: .2;
+    bottom: 242px;
+    left: -322px;
+    font-size: 64px;
+    font-weight: 800;
+
+}
+main {
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+}
+#judgment {
+    background: #ce1a1a;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    width: 800px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    // position: absolute;
+    // right: 0;
+    // top: 0;
+}
+.area {
+    .name {
+        display: table-cell;
+        padding: 14px;
+        color: #000;
+        background: #fff;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    background: #ededed;
+}
+.i_area {
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        padding:0 20px 20px;
+    }
+    li{
+        height:80px;
+        width:80px;
+        padding: 10px;
+        background: #fff;
+        border-radius: 50%;
+        margin-left: 10px;
+        cursor: pointer;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        span{
+            font-size:16px;
+            display: block;
+        } 
+    }
+    li:hover{
+        background: #0066CC;
+    }
+    }
+.hand {
+    height: 250px;
+    padding: 40px;
+}
+
+#pc_hands {
+    img {
+        transform:rotate(180deg);
+    }
+}
